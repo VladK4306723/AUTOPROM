@@ -1,0 +1,35 @@
+@media (max-width: 1360px) {
+
+    .Header__topInfo_workTime {
+        display: none !important;
+    }
+
+    .Header__topInfo_PhoneNumber {
+        display: block !important;
+    }
+
+    .Header__list_nav {
+        display: none;
+    }
+
+    .Header__listElement_PhoneNumber {
+        display: none;
+    }
+
+    .Header__list_rightPart div:nth-of-type(2) {
+        display: none;
+    }
+    
+
+    .mainPage__firstBlock_blockWithCar > div:nth-of-type(1) {
+        font-size: 35px;
+    }
+
+    .mainPage__firstBlock_blockWithCar > div:nth-of-type(2) {
+        font-size: 21px;
+    }
+
+    .mainPage__firstBlock_blockWithCar > div:nth-of-type(3) {
+        font-size: 25px;
+    }
+}
