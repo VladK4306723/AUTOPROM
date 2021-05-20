@@ -4,7 +4,6 @@
 .container{
     max-width: 1360px;
     margin: 0 auto;
-    padding: 0px 10px;
 }
 
 body {
@@ -23,6 +22,7 @@ body {
   display: flex;
   justify-content: space-between;
   background: #FFFFFF;
+  padding: 0px 10px;
 }
 
 .Header__topInfo > div {
@@ -48,6 +48,7 @@ body {
  justify-content: space-between;
  margin-bottom: 19px;
  margin-top: 25px;
+ padding: 0px 10px;
 }
 
 .Header__list_leftPart {
@@ -374,13 +375,21 @@ ul{
 /*DropDown*/
 
 .Header__list_rightPartElement_dropDown {
+  height: 40px;
+  width: 40px;
+  z-index: 4;
+  margin-right: -27px;
   visibility: hidden;
 }
 
 .Header__list_rightPartElement_dropDown_icon {
   text-align: right;
-  display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
+  position: relative;
+  margin-left: 26px;
+  margin-top: 5px;
+  z-index: 4;
+  display: none;
 }
 
 .Header__list_rightPartElement_dropDown_icon span:nth-of-type(1) {
@@ -400,7 +409,15 @@ ul{
   width: 14px;
   border: 2px solid #272522;
   position: absolute;
-  margin-top: 10px;
+  margin-top: 20px;
+}
+
+.Header__list_rightPartElement_dropDown:checked~.dropDown_label>.Header__list_rightPartElement_dropDown_icon span:nth-of-type(2) {
+  width: 36px;
+}
+
+.Header__list_rightPartElement_dropDown:checked~.dropDown_label>.Header__list_rightPartElement_dropDown_icon span:nth-of-type(3) {
+  width: 36px;
 }
 
 .Header__list > div > div{
@@ -408,10 +425,69 @@ ul{
 }
 
 .Header__listElement {
-    display: flex;
-    flex-direction: column;
-    margin-top: -5px;
-    margin-left: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Header__list_rightPartElement_dropDown_body {
+    position: absolute;
+    width: 100%;
+    background: #F8F8F8;
+    border-radius: 5px;
+    left: 0px;
+    margin-top: -29px;
+    display: none;
+    padding-bottom: 135px;
+    z-index: 3;
+}
+
+.Header__list_rightPartElement_dropDown:checked~.Header__list_rightPartElement_dropDown_body {
+  display: block;
+}
+
+.Header__list_rightPartElement_dropDown_body_leftElement {
+  display: flex;
+  margin-top: 26px;
+  margin-left: 26px;
+}
+
+.Header__list_rightPartElement_dropDown_body_links {
+  display: flex !important;
+  flex-direction: column;
+}
+
+.Header__list_rightPartElement_dropDown_body_h1Link {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #272522;
+  text-decoration: none;
+  margin-left: 26px;
+  margin-top: 15px;
+}
+
+.Header__list_rightPartElement_dropDown_body_simpleLink {
+  margin-left: 42px;
+  margin-top: 10px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgba(39, 37, 34, 0.8);
+  text-decoration: none;
+  max-width: 150px;
+}
+
+.Header__list_rightPartElement_dropDown_body_simpleLink_arrow {
+  border: solid rgba(39, 37, 34, 0.8);
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 4px;
+  transform: rotate(-45deg);
+  margin-left: 3px;
 }
 
 /*----------mainPage___firstBlock----------*/
@@ -482,7 +558,7 @@ ul{
   outline: none;
   border: none;
   width: 100%;
-  padding: 0px;
+  
 }
 
 .mainPage__firstBlock_form_sending_form div {
@@ -496,7 +572,7 @@ ul{
   max-width: 480px;
   margin-left: -20px;
   margin-top: -15px;
-  margin-right: 34px;
+  margin-right: 24px;
 }
 
 .mainPage__firstBlock_form_submit {
@@ -520,9 +596,12 @@ ul{
   cursor: pointer;
 }
 
+.mainPage__firstBlock_form {
+  padding: 0px 20%;
+}
+
 .mainPage__firstBlock_form_sending_form {
   display: flex;
-  width: 50%;
   background: #FFFFFF;
   box-shadow: 0px 20px 50px rgba(196, 196, 196, 0.15);
   border-radius: 41px;
@@ -530,8 +609,6 @@ ul{
   background-image: url(../img/mainPageLoup.png);
   background-repeat: no-repeat;
   background-position: 50px 64%;
-  margin: 0 auto;
-  z-index: 2;
   position: relative;
   bottom: -35px;
 }
@@ -551,12 +628,14 @@ ul{
   font-style: Bold;
   font-size: 28px;
   line-height: 38px;
+  padding: 71px 10px 45px 10px;
 }
 
 .mainPage__contentList {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding: 0px 10px;
 }
 
 .mainPage__contentWrap_1 {
@@ -716,11 +795,13 @@ ul{
   margin-bottom: 49px;
 }
 
-.mainPage__bestsellers_element {
+.mainPage__bestsellers_element_1,
+  .mainPage__bestsellers_element_2,
+    .mainPage__bestsellers_element_3,
+      .mainPage__bestsellers_element_4 {
   width: 325px;
   height: 514px;
   background: #FFFFFF;
-  
   position: relative;
 }
 
@@ -826,6 +907,27 @@ ul{
   margin-right: 23px;
 }
 
+.mainPage__bestsellers_btn_noActive {
+  background: #FF8514;
+  border-radius: 15px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  padding: 10px 92px;
+  margin: 0 auto;
+  white-space: nowrap;
+  margin-top: 76px;
+  margin-bottom: 60px;
+  display: none;
+}
+
+.mainPage__bestsellers_btn_noActive>a{
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
 .mainPage__bestsellers_element_content_btn:hover {
   color: #FFFFFF;
   background: #FF8514;
@@ -917,11 +1019,11 @@ ul{
   line-height: 33px;
   text-align: center;
   color: #FFFFFF;
-  width: 410px;
+  width: 80%;
   height: 77px;
   background: rgba(0, 0, 0, 0.8);
   border-radius: 5px;
-  margin: 141px 15px 32px 15px;
+  margin: 141px auto;
   text-align: center;
 }
 
@@ -947,7 +1049,10 @@ ul{
   margin-top: 60px;
 }
 
-.mainPage__OurClientsrecommend_element {
+.mainPage__OurClientsrecommend_element_1,
+  .mainPage__OurClientsrecommend_element_2,
+    .mainPage__OurClientsrecommend_element_3,
+      .mainPage__OurClientsrecommend_element_4 {
   background: #FFFFFF;
   position: relative;
 }
@@ -1107,10 +1212,13 @@ ul{
 
 .mainPage__blod_wrap {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
 
-.mainPage__blod_element {
+.mainPage__blod_element_1,
+  .mainPage__blod_element_2,
+    .mainPage__blod_element_3 {
   max-width: 440px;
   height: 540px;
   position: relative;
@@ -1182,6 +1290,7 @@ footer {
   display: flex;
   justify-content: space-around;
   padding: 30px 44px;
+  margin-bottom: -34px;
 }
 
 .maimPage__footer_formText :nth-child(1) {
@@ -1254,8 +1363,13 @@ footer {
   display: flex;
   background: #272522;
   padding-top: 78px;
-  margin-top: -32px;
+  margin-top: 42px;
   padding-bottom: 111px;
+
+}
+
+.mainPage__footer_mainPart_wrap {
+  display: flex;
 }
 
 .mainPage__footer_background {
@@ -1327,6 +1441,88 @@ footer {
   color: rgba(255, 255, 255, 0.53); 
   text-decoration: none; 
   padding-left: 5px;
+}
+
+.mainPage__footer_mainPartElement_contacts_location_noActive {
+  padding-top: 30px;
+  margin-left: 20px;
+  display: none;
+}
+
+.mainPage__footer_mainPartElement_contacts_location_noActive > a {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgba(255, 255, 255, 0.53); 
+  text-decoration: none; 
+  padding-left: 10px;
+}
+
+.mainPage__footer_mainPartElement_contacts_tel_noActive {
+  margin-left: 20px;
+  margin-top: 10px;
+  display: none;
+}
+
+.mainPage__footer_mainPartElement_contacts_tel_noActive > a {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgba(255, 255, 255, 0.53); 
+  text-decoration: none; 
+  padding-left: 5px;
+}
+
+.maimPage__footer_form_noActive {
+  display: flex;
+  flex-direction: column;
+}
+
+.maimPage__footer_form_noActive div {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFFFFF;
+  margin-top: -75px;
+  display: none;
+}
+
+.maimPage__footer_formInputs_tel_noActive {
+  background: #FFFFFF;
+  border: 1px solid #DEDEDE;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  color: rgba(0, 0, 0, 0.4);
+  outline: none; 
+  padding: 13px  0px 13px 20px;
+  margin-top: 27px;
+  margin-bottom: 16px;
+  display: none;
+}
+
+.maimPage__footer_formInputs_submit_noActive {
+  background: #FF8514;
+  border-radius: 10px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFFFFF;
+  padding: 11px 0px;
+  border: none;
+  display: none;
 }
 
 
