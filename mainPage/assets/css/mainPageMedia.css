@@ -40,9 +40,17 @@
                 margin-bottom: 10px;
     }
 
+    .mainPage__catalog>h1 {
+        padding-left: 20px;
+    }
+
     .mainPage__catalog {
         background: #FFFFFF;
-        padding: 0px;
+        padding: inherit;
+    }
+
+    .mainPage__bestsellers_h1 {
+        margin-left: 20px;
     }
 
     .mainPage__bestsellers_wrap {
@@ -59,6 +67,10 @@
     .mainPage__bestsellers_btn {
         display: none;
     }   
+
+    .main__Page_OurServices > div > h1 {
+        padding-left: 20px;
+    }
     
     .main__Page_OurServices_wrap {
         flex-direction: column;
@@ -78,6 +90,10 @@
     .main__Page_OurServices_wrap {
         align-items: center;
     }
+
+    .mainPage__OurClientsrecommend_h1 {
+        padding-left: 20px;
+    }
     
     .mainPage__OurClientsrecommend_wrap {
         flex-direction: column;
@@ -90,10 +106,14 @@
             .mainPage__OurClientsrecommend_element_4 {
                 display: none;
             }
+
+    .mainPage__blogTop {
+        padding: 0px 20px 0px 20px;
+    }
     
     .mainPage__blod_wrap {
-        flex-direction: column;
-        align-items: center;
+        padding: 0px 20px 0px 20px;
+        justify-content: center;
     }
     
     .mainPage__blod_element_2,
@@ -118,6 +138,10 @@
     .mainPage__footer_mainPartElement_title {
         margin-bottom: 8px;
     }
+
+    .mainPage__footer_mainPart_wrap>a {
+        display: block;
+    }  
 
     .mainPage__footer_mainPartElement_text {
         display: none;
@@ -154,7 +178,9 @@
         display: block;
         margin-left: 10px;
         margin-right: 10px;
-    }       
+    }   
+    
+    
 }
 
 /*----------fix----------*/
@@ -225,8 +251,7 @@
     }
 
     .mainPage__blod_element_1 img {
-        width: 374px;
-        margin: 0px auto;
+        width: 100%;
     }
 
     .mainPage__blod_wrap {
@@ -262,7 +287,14 @@
 
     .mainPage__firstBlock_blockWithCar > div:nth-of-type(2) {
         font-size: 21px;
+        color: #FFFFFF;
     }
+
+    .aboutUs__firstBlock_blockWithImg > 
+        div:nth-of-type(2) span {
+            border: 1px solid #FFFFFF;
+            width: 10px;
+        }
 
     .mainPage__firstBlock_blockWithCar > div:nth-of-type(3) {
         font-size: 25px;
